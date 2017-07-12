@@ -3,10 +3,15 @@
 <head>
   <script src="https://threejs.org/build/three.min.js">THREE.Scene();</script>
   <script>
+    var scene, camera, rendered;
+    var geometry, material, mesh;
+
     init();
     animate();
-  
+
     function init() {
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(75);
 
     }
 
@@ -17,6 +22,7 @@
   </script>
 </head>
 <body>
+  <h1>Creppis<h1>
   <canvas id="canvas">Your browser does not support the HTML5 <code>canvas</code> element, please update your browser</canvas>
 </body>
 </html>
