@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://threejs.org/build/three.min.js">THREE.Scene();</script>
-  <script>
-    var scene, camera, rendered;
-    var geometry, material, mesh;
-
-    init();
-    animate();
-
-    function init() {
-      scene = new THREE.Scene();
-      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
-      camera.position.z = 1000;
-
-      geometry = new THREE.BoxGeometry(200, 200, 200);
-      material = new THREE.MeshBasicMaterial({color: 0xff0000, wireframe: true});
-
-      mesh = new THREE.Mesh(geometry, material);
-      scene.add(mesh);
-
-      rendered = new THREE.WebGLRenderer();
-      rendered.setSize(window.innerWidth, window.innerHeight);
-
-      document.body.appendChild(renderer.domElement);
-    }
-
-    function animate() {
-
-    }
-
-  </script>
+<script src="//cdn.rawgit.com/mrdoob/three.js/master/build/three.min.js"></script>
 </head>
-<body>
-  <h1>Creppis<h1>
+<body id="body">
+  <!-- <h1>Creppis<h1> -->
   <!-- <canvas id="canvas">Your browser does not support the HTML5 <code>canvas</code> element, please update your browser</canvas> -->
 </body>
+<script>
+var camera, scene, renderer;
+var geometry, material, mesh;
+
+init();
+// animate();
+
+function init() {
+
+  camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+  camera.position.z = 1000;
+
+  scene = new THREE.Scene();
+
+  geometry = new THREE.BoxGeometry(200, 200, 200);
+  material = new THREE.MeshBasicMaterial({
+      color: 0xff0000,
+      wireframe: true
+  });
+
+  mesh = new THREE.Mesh(geometry, material);
+  scene.add(mesh);
+
+  renderer = new THREE.WebGLRenderer();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  document.body.appendChild(renderer.domElement);
+}
+  </script>
 </html>
